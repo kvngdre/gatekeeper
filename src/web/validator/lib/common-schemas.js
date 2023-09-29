@@ -4,6 +4,8 @@ import { GENDER, MARITAL_STATUS } from "../../../utils/helpers/index.js";
 
 export const accessCodeSchema = Joi.string()
   .alphanum()
+  .uppercase()
+  .trim()
   .length(6)
   .label("Access Code");
 

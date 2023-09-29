@@ -22,7 +22,7 @@ userRouter.get("/", userController.index);
 userRouter.get("/:id", ValidateRequest.with(idValidator), userController.show);
 
 userRouter.get(
-  "/:code",
+  "/codes/:code",
   ValidateRequest.with(getByAccessCodeValidator),
   userController.getByAccessCode,
 );

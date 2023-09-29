@@ -54,7 +54,9 @@ export class UserController {
    * @param {import('express').Response} res
    */
   getByAccessCode = async (req, res) => {
-    const { message, data } = await this.#userService.get(req.params.id);
+    const { message, data } = await this.#userService.getByAccessCode(
+      req.params.code,
+    );
     const response = BaseHttpResponse.success(message, data);
 
     res.status(200).json(response);
