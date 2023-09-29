@@ -5,14 +5,14 @@ import {
 } from "../../data/repositories/user.repository.js";
 import { NotFoundException } from "../../utils/exceptions/index.js";
 import { messages } from "../../utils/index.js";
-import { UserResponseDto } from "../dto/user/user-response.dto.js";
+import { UserResponseDto } from "../dto/user/index.js";
 
 export class UserService {
   /** @type {UserRepository} */
   #userRepository;
 
-  constructor(userRepository) {
-    this.#userRepository = userRepository;
+  constructor(userRepo) {
+    this.#userRepository = userRepo;
   }
 
   async all() {
