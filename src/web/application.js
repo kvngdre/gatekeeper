@@ -1,8 +1,13 @@
 import express from "express";
+import helmet from "helmet";
 import morgan from "morgan";
 
 import { logger } from "../utils/index.js";
-import { resourceNotFoundHandler } from "./middleware/index.js";
+import {
+  errorHandlingMiddleware,
+  resourceNotFoundHandler,
+} from "./middleware/index.js";
+
 import appRouter from "./routes/index.js";
 
 /**
@@ -17,7 +22,6 @@ export class Application {
   #app;
 
   /**
-   *
    * @param {ApplicationOptions} options
    */
   constructor(options) {
@@ -25,12 +29,12 @@ export class Application {
   }
 
   /**
-   *
    * @param {ApplicationOptions} options
    */
   #setup(options) {
     this.#app = express();
 
+    this.#app.use(helmet());
     this.#app.use(express.json());
     this.#app.use(express.urlencoded({ extended: true }));
     this.#app.use(
@@ -46,6 +50,7 @@ export class Application {
     this.#app.use("/api", appRouter);
 
     this.#app.use(resourceNotFoundHandler);
+    this.#app.use(errorHandlingMiddleware);
   }
 
   get app() {
