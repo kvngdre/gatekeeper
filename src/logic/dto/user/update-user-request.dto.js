@@ -7,6 +7,7 @@ export class UpdateUserDto {
     email,
     accessCode,
     registeredAt,
+    isCheckedIn,
     createdAt,
     updatedAt,
   }) {
@@ -17,6 +18,7 @@ export class UpdateUserDto {
     this.email = email;
     this.registeredAt = registeredAt;
     this.accessCode = accessCode;
+    this.isCheckedIn = isCheckedIn;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
@@ -29,8 +31,8 @@ export class UpdateUserDto {
     email,
     accessCode,
     registeredAt,
+    isCheckedIn,
     createdAt,
-    updatedAt,
   }) {
     return new UpdateUserDto({
       name,
@@ -40,8 +42,9 @@ export class UpdateUserDto {
       email,
       accessCode,
       registeredAt,
+      isCheckedIn,
       createdAt,
-      updatedAt,
+      updatedAt: new Date(),
     });
   }
 }

@@ -11,6 +11,14 @@ import BaseHttpResponse from "../lib/base-http-response.js";
  * @param {import('express').NextFunction} next
  */
 export function errorHandlingMiddleware(err, req, res, next) {
+  if (err instanceof SyntaxError && "body" in err) {
+    const response = BaseHttpResponse.failed(
+      `Error parsing JSON: ${err.message}`,
+      err,
+    );
+    return res.status(400).json(response);
+  }
+
   errorHandler.handleError(err);
 
   if (errorHandler.isTrustedError(err)) {

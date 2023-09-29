@@ -15,5 +15,7 @@ export const messages = {
     },
   },
 
-  user: {},
+  user: {
+    CHECKED_IN: "User checked in successfully",
+  },
 };

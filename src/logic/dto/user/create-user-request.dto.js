@@ -7,6 +7,7 @@ export class CreateUserDto {
     email,
     registeredAt,
     accessCode,
+    isCheckedIn,
   }) {
     this.name = name;
     this.gender = gender;
@@ -15,6 +16,7 @@ export class CreateUserDto {
     this.email = email;
     this.registeredAt = registeredAt;
     this.accessCode = accessCode;
+    this.isCheckedIn = isCheckedIn;
   }
 
   static from({
@@ -25,6 +27,7 @@ export class CreateUserDto {
     email,
     registeredAt,
     accessCode,
+    isCheckedIn,
   }) {
     return new CreateUserDto({
       name,
@@ -34,6 +37,7 @@ export class CreateUserDto {
       email,
       registeredAt,
       accessCode,
+      isCheckedIn,
     });
   }
 }

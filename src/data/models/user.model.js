@@ -41,6 +41,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+
+    isCheckedIn: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true },
 );
