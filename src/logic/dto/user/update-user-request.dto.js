@@ -8,6 +8,7 @@ export class UpdateUserDto {
     accessCode,
     registeredAt,
     isCheckedIn,
+    checkInTime,
     createdAt,
     updatedAt,
   }) {
@@ -19,6 +20,7 @@ export class UpdateUserDto {
     this.registeredAt = registeredAt;
     this.accessCode = accessCode;
     this.isCheckedIn = isCheckedIn;
+    this.checkInTime = checkInTime;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
@@ -32,6 +34,7 @@ export class UpdateUserDto {
     accessCode,
     registeredAt,
     isCheckedIn,
+    checkInTime,
     createdAt,
   }) {
     return new UpdateUserDto({
@@ -43,6 +46,7 @@ export class UpdateUserDto {
       accessCode,
       registeredAt,
       isCheckedIn,
+      checkInTime,
       createdAt,
       updatedAt: new Date(),
     });

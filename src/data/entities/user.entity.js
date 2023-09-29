@@ -16,6 +16,7 @@ export class UserEntity {
     accessCode,
     registeredAt,
     isCheckedIn,
+    checkInTime,
     createdAt,
     updatedAt,
   }) {
@@ -28,6 +29,7 @@ export class UserEntity {
     this.registeredAt = registeredAt;
     this.accessCode = accessCode;
     this.isCheckedIn = isCheckedIn;
+    this.checkInTime = checkInTime;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
@@ -40,6 +42,7 @@ export class UserEntity {
     email,
     registeredAt,
     isCheckedIn = false,
+    checkInTime = null,
     accessCode = generateAccessCode(),
     id = Id.makeId(),
     createdAt = new Date(),
@@ -55,6 +58,7 @@ export class UserEntity {
       accessCode,
       registeredAt,
       isCheckedIn,
+      checkInTime,
       createdAt,
       updatedAt,
     });
@@ -70,6 +74,7 @@ export class UserEntity {
     accessCode,
     registeredAt,
     isCheckedIn,
+    checkInTime,
     createdAt,
     updatedAt,
   }) {
@@ -119,6 +124,7 @@ export class UserEntity {
       accessCode,
       registeredAt: new Date(registeredAt),
       isCheckedIn,
+      checkInTime,
       createdAt,
       updatedAt,
     });

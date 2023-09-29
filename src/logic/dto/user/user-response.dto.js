@@ -9,6 +9,7 @@ export class UserResponseDto {
     accessCode,
     registeredAt,
     isCheckedIn,
+    checkInTime,
     createdAt,
     updatedAt,
   }) {
@@ -21,6 +22,7 @@ export class UserResponseDto {
     this.registeredAt = registeredAt;
     this.accessCode = accessCode;
     this.isCheckedIn = isCheckedIn;
+    this.checkInTime = checkInTime;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
@@ -35,6 +37,7 @@ export class UserResponseDto {
     accessCode,
     registeredAt,
     isCheckedIn,
+    checkInTime,
     createdAt,
     updatedAt,
   }) {
@@ -48,6 +51,7 @@ export class UserResponseDto {
       accessCode,
       registeredAt,
       isCheckedIn,
+      checkInTime,
       createdAt,
       updatedAt,
     });

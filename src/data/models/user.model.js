@@ -46,6 +46,11 @@ const userSchema = new Schema(
       type: Boolean,
       default: false,
     },
+
+    checkInTime: {
+      type: Date,
+      default: null,
+    },
   },
   { timestamps: true },
 );

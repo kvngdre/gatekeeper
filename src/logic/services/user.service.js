@@ -87,7 +87,10 @@ export class UserService {
     const userEntity = UserEntity.make({
       ...user._doc,
       isCheckedIn: true,
+      checkInTime: new Date(),
     });
+
+    console.log(userEntity);
 
     const updatedUser = await this.#userRepository.updateById(id, userEntity);
 
