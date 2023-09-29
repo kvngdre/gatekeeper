@@ -1,7 +1,7 @@
 export default {
   allowedOrigins: [
     "http://localhost:5173",
-    "https://gatekeeper-inky.vercel.app/",
+    "https://gatekeeper-inky.vercel.app",
   ],
 
   db: {

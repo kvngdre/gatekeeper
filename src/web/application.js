@@ -1,4 +1,3 @@
-import cors from "cors";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
@@ -9,7 +8,6 @@ import {
   resourceNotFoundHandler,
 } from "./middleware/index.js";
 
-import config from "../config/index.js";
 import appRouter from "./routes/index.js";
 
 /**
@@ -18,10 +16,6 @@ import appRouter from "./routes/index.js";
  * @property {Object} morgan
  * @property {("combined"|"common"|"dev"|"short"|"tiny")} morgan.mode
  */
-
-const corsOptions = {
-  origin: config.allowedOrigins,
-};
 
 export class Application {
   /** @type {express.Express} */
@@ -41,7 +35,6 @@ export class Application {
     this.#app = express();
 
     this.#app.use(helmet());
-    this.#app.use(cors(corsOptions));
     this.#app.use(express.json());
     this.#app.use(express.urlencoded({ extended: true }));
     this.#app.use(
