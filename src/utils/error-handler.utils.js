@@ -1,16 +1,16 @@
 import { BaseException } from "./exceptions/index.js";
 import { logger } from "./logger.utils.js";
 
-export class ErrorHandler {
+class ErrorHandler {
   /**
    *
    * @param {(BaseException|Error)} error
    */
   handleError(error) {
-    if (!this.isTrustedError(error)) {
-      this.#handleCriticalError(error);
-    } else {
+    if (this.isTrustedError(error)) {
       this.#handleTrustedError(error);
+    } else {
+      this.#handleCriticalError(error);
     }
   }
 
@@ -22,7 +22,6 @@ export class ErrorHandler {
     if (error instanceof BaseException) {
       return error.isOperational;
     }
-
     return false;
   }
 
@@ -42,3 +41,5 @@ export class ErrorHandler {
    */
   #handleTrustedError(error) {}
 }
+
+export const errorHandler = new ErrorHandler();

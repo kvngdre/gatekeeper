@@ -1,9 +1,9 @@
 export class BaseException extends Error {
-  constructor(code, message, errors, isOperational = true) {
+  constructor(httpCode, message, errors, isOperational = true) {
     super(message);
     Object.setPrototypeOf(this, new.target.prototype);
 
-    this.code = code;
+    this.httpCode = httpCode;
     this.errors = errors;
     this.isOperational = isOperational;
 

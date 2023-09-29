@@ -1,6 +1,8 @@
 import "dotenv/config.js";
 import "express-async-errors";
 
+import "./process-listeners/index.js";
+
 import http from "http";
 
 import config from "./config/index.js";
