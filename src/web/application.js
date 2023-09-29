@@ -20,10 +20,12 @@ import appRouter from "./routes/index.js";
  */
 
 const corsOptions = {
-  origin: function (origin, callback) {
+  origin: (origin, callback) => {
     if (config.allowedOrigins.indexOf(origin) !== -1) {
+      console.log("allowed");
       callback(null, true);
     } else {
+      console.log("not allowed");
       callback(new Error("Not allowed by CORS"));
     }
   },
