@@ -19,10 +19,10 @@ export class UserResponseDto {
     this.maritalStatus = maritalStatus;
     this.phone = phone;
     this.email = email;
-    this.registeredAt = registeredAt;
     this.accessCode = accessCode;
     this.isCheckedIn = isCheckedIn;
     this.checkInTime = checkInTime;
+    this.registeredAt = registeredAt;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
