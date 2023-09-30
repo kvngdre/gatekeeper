@@ -19,13 +19,14 @@ import appRouter from "./routes/index.js";
  * @property {("combined"|"common"|"dev"|"short"|"tiny")} morgan.mode
  */
 
+/** @type {cors.CorsOptions} */
 const corsOptions = {
   origin: (origin, callback) => {
     if (config.allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
       console.log("not allowed");
-      callback(new Error("Not allowed by CORS"));
+      callback(new Error("Not allowed by CORS"), false);
     }
   },
 };
