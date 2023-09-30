@@ -24,6 +24,7 @@ const userSchema = new Schema(
 
     phone: {
       type: String,
+      unique: true,
       required: true,
     },
 
@@ -39,6 +40,7 @@ const userSchema = new Schema(
 
     accessCode: {
       type: String,
+      unique: true,
       required: true,
     },
 
