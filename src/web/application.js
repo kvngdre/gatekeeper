@@ -48,7 +48,7 @@ export class Application {
     this.#app = express();
 
     this.#app.use(helmet());
-    this.#app.use(cors(corsOptions));
+    this.#app.use(cors({ origin: "*" }));
     this.#app.use(express.json());
     this.#app.use(express.urlencoded({ extended: true }));
     this.#app.use(
