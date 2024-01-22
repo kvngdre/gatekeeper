@@ -3,6 +3,7 @@ export default {
     "https://gatekeeper-inky.vercel.app",
     "http://localhost:5173",
     "http://localhost:3450",
+    "http://127.0.0.1:3450",
   ],
 
   db: {
